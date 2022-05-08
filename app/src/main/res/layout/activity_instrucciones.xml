@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--NO SE USA-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Instrucciones"
+    android:background="@drawable/background_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/changeText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edit_text_box"
+            android:editable="false"
+            android:gravity="center"
+            android:padding="10dp"
+            tools:text="@string/instruccionestexto" />
+    </LinearLayout>
+</RelativeLayout>
