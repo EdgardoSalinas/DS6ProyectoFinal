@@ -29,7 +29,7 @@
         android:layout_width="283dp"
         android:layout_height="0dp"
         android:layout_marginEnd="48dp"
-        android:layout_marginBottom="89dp"
+        android:layout_marginBottom="40dp"
         android:background="#FFFFFF"
         android:ems="10"
         android:gravity="start|top"
@@ -45,22 +45,33 @@
         android:id="@+id/bt_iniciarprueba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="43dp"
+        android:layout_marginBottom="28dp"
         android:text="Iniciar Prueba"
         app:layout_constraintBottom_toTopOf="@+id/bt_cancelarprueba"
-        app:layout_constraintEnd_toEndOf="@+id/editTextTextMultiLine"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextMultiLine" />
 
     <Button
         android:id="@+id/bt_cancelarprueba"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginBottom="106dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="36dp"
         android:text="Cancelar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/bt_iniciarprueba"
+        app:layout_constraintBottom_toTopOf="@+id/tv_tmprespuesta"
+        app:layout_constraintEnd_toEndOf="@+id/bt_iniciarprueba"
         app:layout_constraintTop_toBottomOf="@+id/bt_iniciarprueba" />
+
+    <TextView
+        android:id="@+id/tv_tmprespuesta"
+        android:layout_width="293dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="38dp"
+        android:layout_marginBottom="98dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_cancelarprueba" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

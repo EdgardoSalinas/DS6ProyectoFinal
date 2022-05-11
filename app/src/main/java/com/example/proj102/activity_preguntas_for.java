@@ -1,11 +1,13 @@
 package com.example.proj102;
 //HACE LAS PREGUNTAS
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,11 +25,18 @@ public class activity_preguntas_for extends AppCompatActivity {
 
     TextView tv_pregunta;
     ImageView iv_imagen;
+    RadioGroup rg_radiogroup1;
     RadioButton rb_opcion1;
     RadioButton rb_opcion2;
     RadioButton rb_opcion3;
     RadioButton rb_opcion4;
     Button bt_siguientepregunta;
+
+    String wrespuesta = "";
+    String wcorrecto = "";
+    RadioButton radiobuttonselected;
+
+
 
     private List<Preguntalineadedato> preguntalineadedatos = new ArrayList<>();
 
@@ -38,6 +47,7 @@ public class activity_preguntas_for extends AppCompatActivity {
 
         tv_pregunta = findViewById(R.id.tv_pregunta);
         iv_imagen = findViewById(R.id.iv_imagen);
+        rg_radiogroup1 = findViewById(R.id.rg_radioGroup1);
         rb_opcion1 = findViewById(R.id.rb_opcion1);
         rb_opcion2 = findViewById(R.id.rb_opcion2);
         rb_opcion3 = findViewById(R.id.rb_opcion3);
@@ -48,6 +58,14 @@ public class activity_preguntas_for extends AppCompatActivity {
             @Override
             public void onClick(View view){
 
+                int selected_rb_id=rg_radiogroup1.getCheckedRadioButtonId();
+                radiobuttonselected=(RadioButton)findViewById(selected_rb_id);
+
+                Intent intent = new Intent();
+                String wresultado = tv_pregunta.getText().toString();
+                wresultado = wresultado + "," + radiobuttonselected.toString();
+                intent.putExtra("resultado",wresultado);
+                setResult(RESULT_OK, intent);
                 finish();
             }
         });
@@ -70,6 +88,10 @@ public class activity_preguntas_for extends AppCompatActivity {
         rb_opcion2.setText(datosenunalinea.getOpcion2());
         rb_opcion3.setText(datosenunalinea.getOpcion3());
         rb_opcion4.setText(datosenunalinea.getOpcion4());
+
+        wrespuesta = datosenunalinea.getRespuesta();
+
+
 
 
     }
